@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.9996249038479509 -0.02145351459029487 0.017023463769124586 0.3044805453185613
-  position 0.14807357512190691 0.9675319100244908 2.075110184124089
+  orientation -0.988783524491331 -0.1463785841525358 -0.02967240799127645 0.4044154653971425
+  position 0.1837303278431467 1.2393428970353069 0.9426600548987711
 }
 TexturedBackground {
 }
@@ -12,6 +12,7 @@ TexturedBackgroundLight {
 Floor {
 }
 Solid {
+  translation 0 0.5 0
   children [
     Shape {
       appearance PBRAppearance {
@@ -20,6 +21,21 @@ Solid {
       geometry Cylinder {
         height 1
         radius 0.15
+      }
+    }
+    HingeJoint {
+      endPoint Solid {
+        translation 0.25 0.505 0
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0.9372549019607843 0.1607843137254902 0.1607843137254902
+            }
+            geometry Box {
+              size 0.5 0.01 0.1
+            }
+          }
+        ]
       }
     }
   ]
